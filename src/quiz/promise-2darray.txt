@@ -1,1 +1,18 @@
 Explain the code execution based on the order of the messages logged in src/quiz/promise-2darray.txt.
+
+Sum called ...: This log indicates that the sum2DArray function is called.
+
+returning from sum: This log is executed after the if condition inside the sum2DArray function. It indicates that the function has reached the end of its execution and is about to return.
+
+Sum called ...: This log is printed when sum2DArray is called again, indicating a second invocation of the function.
+
+rejecting ...: This log is executed because the input provided to the sum2DArray function is not an array, as expected. Hence, the promise is rejected with the error message "BAD INPUT: Expected array as input".
+
+returning from sum: Similar to line 2, this log is executed after the if condition inside the sum2DArray function when the function has finished execution and is about to return.
+
+Error: BAD INPUT: Expected array as input: This line indicates an error message due to the rejection of the promise in the second invocation of the sum2DArray function.
+
+resolving ...: This log is printed when the promise returned by sum2DArray with the correct input (an array) is resolved. It indicates that the sum calculation is completed.
+
+Sum of array2D: 45: This line is printed when the promise returned by sum2DArray with the correct input (an array) is resolved successfully. It displays the sum of all elements in the 2D array provided earlier (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 = 45).
+

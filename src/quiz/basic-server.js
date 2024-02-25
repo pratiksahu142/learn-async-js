@@ -45,6 +45,9 @@ const server = http.createServer((req, res) => {
             res.end(JSON.stringify(incidents.filter((incident) => {
                 return incident.id === `MABOS00${id}`
             })));
+        } else {
+            res.writeHead(400, {'Content-type': 'text/plain'});
+            res.end('Bad Request');
         }
     } else {
         // If the request is for an unsupported endpoint, send a not found response
