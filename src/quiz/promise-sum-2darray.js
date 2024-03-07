@@ -33,12 +33,17 @@ for(let x=0;x<array2D.length;x++){
     promises.push(RowSum(array2D,x))
 }
 
-Promise.all(promises)
-    .then((rsum)=>{
-        let sum=0;
-        rsum.forEach(rsum =>{
-            sum+=rsum;
-        })
+async function calculateTotalSum(promises) {
+    try {
+        const rsum = await Promise.all(promises);
+        let sum = 0;
+        rsum.forEach(r => {
+            sum += r;
+        });
         console.log(sum);
-    })
-    .catch((error)=> console.log(error))
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+calculateTotalSum(promises);
